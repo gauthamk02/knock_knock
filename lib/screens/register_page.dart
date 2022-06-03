@@ -20,11 +20,7 @@ class _RegisterPageState extends State<RegisterPage> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Image(
-            width: 24,
-            color: Colors.white,
-            image: Svg('assets/images/back_arrow.svg'),
-          ),
+          icon: const Icon(Icons.arrow_back),
         ),
       ),
       body: SafeArea(
@@ -42,26 +38,26 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Register",
                             style: kHeadline,
                           ),
-                          Text(
+                          const Text(
                             "Create new account to get started.",
                             style: kBodyText2,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 50,
                           ),
-                          MyTextField(
+                          const MyTextField(
                             hintText: 'Name',
                             inputType: TextInputType.name,
                           ),
-                          MyTextField(
+                          const MyTextField(
                             hintText: 'Email',
                             inputType: TextInputType.emailAddress,
                           ),
-                          MyTextField(
+                          const MyTextField(
                             hintText: 'Phone',
                             inputType: TextInputType.phone,
                           ),
@@ -78,27 +74,22 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Text(
                           "Already have an account? ",
                           style: kBodyText,
                         ),
-                        Text(
-                          "Sign In",
-                          style: kBodyText.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
+                        Text("Sign In", style: kButtonText),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     MyTextButton(
                       buttonName: 'Register',
                       onTap: () {},
-                      bgColor: Colors.white,
-                      textColor: Colors.black87,
+                      bgColor: kBackgroundColor,
+                      textColor: kPrimaryTextColor,
                     )
                   ],
                 ),

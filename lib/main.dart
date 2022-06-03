@@ -14,13 +14,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Sign In Sign Up Ui',
-      theme: ThemeData(
-        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
-        scaffoldBackgroundColor: kBackgroundColor,
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: AppTheme(context),
       home: RegisterPage(),
     );
   }
+}
+
+ThemeData AppTheme(BuildContext context) {
+  return ThemeData(
+    textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
+    scaffoldBackgroundColor: kBackgroundColor,
+    primarySwatch: Colors.blue,
+    visualDensity: VisualDensity.adaptivePlatformDensity,
+  );
 }
