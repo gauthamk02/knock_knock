@@ -39,14 +39,14 @@ class MyPasswordField extends StatelessWidget {
           hintText: 'Password',
           hintStyle: kBodyText,
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.grey,
+            borderSide: const BorderSide(
+              color: kTextFieldBorder,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(18),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: Colors.white,
               width: 1,
             ),

@@ -4,7 +4,7 @@ import '../constants.dart';
 
 class MyTextField extends StatelessWidget {
   const MyTextField({
-    Key ? key,
+    Key? key,
     required this.hintText,
     required this.inputType,
   }) : super(key: key);
@@ -25,7 +25,7 @@ class MyTextField extends StatelessWidget {
           hintStyle: kBodyText,
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.grey,
+              color: kTextFieldBorder,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(18),
