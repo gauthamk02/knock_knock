@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
 import './screens/screen.dart';
 import './screens/register_page.dart';
+import './navigator.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -23,6 +24,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Sign In Sign Up Ui',
       theme: AppTheme(context),
       home: RegisterPage(),
+      initialRoute: '/signin',
+      routes: routes,
     );
   }
 }

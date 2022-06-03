@@ -74,12 +74,20 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           "Already have an account? ",
                           style: kBodyText,
                         ),
-                        Text("Sign In", style: kButtonText),
+                        TextButton(
+                          child: Text("Sign In"),
+                          style: ButtonStyle(
+                              textStyle: MaterialStateProperty.all<TextStyle>(
+                                  kButtonText)),
+                          onPressed: () {
+                            Navigator.of(context).popAndPushNamed("/signin");
+                          },
+                        ),
                       ],
                     ),
                     const SizedBox(

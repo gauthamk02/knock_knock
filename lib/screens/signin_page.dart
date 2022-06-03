@@ -91,12 +91,17 @@ class _SignInPageState extends State<SignInPage> {
                               ),
                             );
                           },
-                          child: Text(
-                            'Register',
-                            style: kBodyText.copyWith(
-                              color: Colors.white,
-                            ),
-                          ),
+                          child: TextButton(
+                            child: Text("Register"),
+                            style: ButtonStyle(
+                                textStyle: MaterialStateProperty.all<TextStyle>(
+                                    kButtonText)),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .popAndPushNamed("/register");
+                            },
+                          )
+                          ,
                         )
                       ],
                     ),
