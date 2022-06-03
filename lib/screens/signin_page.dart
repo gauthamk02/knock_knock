@@ -22,11 +22,7 @@ class _SignInPageState extends State<SignInPage> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Image(
-            width: 24,
-            color: Colors.white,
-            image: Svg('assets/images/back_arrow.svg'),
-          ),
+          icon: const Icon(Icons.arrow_back),
         ),
       ),
       body: SafeArea(
@@ -111,8 +107,8 @@ class _SignInPageState extends State<SignInPage> {
                     MyTextButton(
                       buttonName: 'Sign In',
                       onTap: () {},
-                      bgColor: Colors.white,
-                      textColor: Colors.black87,
+                      bgColor: kBackgroundColor,
+                      textColor: kPrimaryTextColor,
                     ),
                   ],
                 ),
