@@ -33,6 +33,7 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_svg_provider: ^1.0.3
   provider: ^6.0.3
+  intl: ^0.17.0
   twilio_phone_verify: ^2.0.0
   flutter_dotenv: ^5.0.2
 

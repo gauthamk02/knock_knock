@@ -35,7 +35,7 @@ ThemeData AppTheme(BuildContext context) {
         .copyWith(bodyText1: kBodyText1, bodyText2: kBodyText2),
     // textTheme: TextTheme(bodyLarge: kSubheadingtextStyle, bodyText1: kBodyText),
     scaffoldBackgroundColor: kBackgroundColor,
-    primarySwatch: Colors.blue,
+    primarySwatch: Colors.teal,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 }

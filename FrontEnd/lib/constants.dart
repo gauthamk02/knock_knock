@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 // Colors
-const kBackgroundColor = Color.fromARGB(255, 255, 255, 255);
+const kBackgroundColor = Color.fromARGB(255, 219, 238, 224);
 const kTextFieldFill = Color.fromARGB(255, 255, 255, 255);
 const kTextFieldBorder = Colors.teal;
 const kPrimaryTextColor = Colors.teal;
