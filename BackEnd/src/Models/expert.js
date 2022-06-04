@@ -1,12 +1,14 @@
-const Sequelize = require("sequelize");
+const { Sequelize } = require("sequelize-cockroachdb");
 
 const sequelize = require("../core/db");
 
 
 const expert = sequelize.define("expert", {
     uuid: {
-        type : Sequelize.UUID,
-        defaultValue : Sequelize.UUIDV4,
+        type: Sequelize.UUID,
+        default : Sequelize.UUIDV4,
+        primaryKey : true,
+        allowNull : false
     },
     aboutYourself : {
         type : Sequelize.TEXT,
