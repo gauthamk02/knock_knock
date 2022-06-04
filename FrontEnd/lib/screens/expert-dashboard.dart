@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:knock_knock/widgets/event-popup.dart';
 import 'package:intl/intl.dart';
+import '../widgets/explorer-block.dart';
+import '../widgets/event-block.dart';
 
 class ExpertDashboard extends StatefulWidget {
   const ExpertDashboard({Key? key}) : super(key: key);
@@ -38,7 +40,7 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
         context: context,
         builder: (context) {
           return Container(
-            // height: MediaQuery.of(context).size.height * 0.9,
+            // height: MediaQuery.of(context).size.height * 0.4,
             child: Card(
               margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
               elevation: 8,
@@ -46,7 +48,11 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    Text("Add new Event!"),
+                    Text(
+                      "Add new Event!",
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    ),
                     Form(
                       key: _formKey,
                       child: Column(
@@ -55,8 +61,7 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
                           Padding(
                             padding: EdgeInsets.only(
                                 bottom:
-                                    MediaQuery.of(context).viewInsets.bottom *
-                                        2),
+                                    MediaQuery.of(context).viewInsets.bottom),
                             child: TextFormField(
                               controller: _title,
                               decoration:
@@ -64,10 +69,10 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
                             ),
                           ),
                           Padding(
-                            // padding: EdgeInsets.only(
-                            //     bottom:
-                            //         MediaQuery.of(context).viewInsets.bottom),
-                            padding: EdgeInsets.all(1),
+                            padding: EdgeInsets.only(
+                                bottom:
+                                    MediaQuery.of(context).viewInsets.bottom),
+                            // padding: EdgeInsets.all(1),
                             child: TextFormField(
                               maxLines: 3,
                               controller: _description,
@@ -107,7 +112,9 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
                             padding: const EdgeInsets.all(8.0),
                             child: ElevatedButton(
                               child: Text("Submit"),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
                             ),
                           ),
                         ],
@@ -145,10 +152,25 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
             SizedBox(
               height: 2,
             ),
+            Text("NearBy Explorers!"),
             Container(
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.height * 0.2,
-              color: Colors.red,
+              width: MediaQuery.of(context).size.width * 0.95,
+              height: MediaQuery.of(context).size.height * 0.4,
+              // color: Colors.red,
+              // child: ExpertBlock(),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    ExplorerBlock(),
+                    ExplorerBlock(),
+                    ExplorerBlock(),
+                    ExplorerBlock(),
+                    ExplorerBlock(),
+                    ExplorerBlock()
+                  ],
+                ),
+              ),
             ),
             SizedBox(
               height: 10,
@@ -158,8 +180,26 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
               height: 10,
             ),
             Container(
-                height: MediaQuery.of(context).size.height * 0.45,
-                color: Colors.green)
+              height: MediaQuery.of(context).size.height * 0.38,
+              width: MediaQuery.of(context).size.width * 0.94,
+              // color: Colors.green,
+              child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    children: [
+                      EventBlock(),
+                      EventBlock(),
+                      EventBlock(),
+                      EventBlock(),
+                      EventBlock(),
+                      EventBlock(),
+                      EventBlock(),
+                      EventBlock(),
+                      EventBlock(),
+                      EventBlock(),
+                    ],
+                  )),
+            )
           ],
         ),
       ),

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:knock_knock/widgets/event-block.dart';
 import 'package:knock_knock/widgets/expert-block.dart';
@@ -11,6 +13,36 @@ class ExplorerDashboard extends StatefulWidget {
 }
 
 class _ExplorerDashboardState extends State<ExplorerDashboard> {
+  void checkExperts(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            child: Padding(
+              padding: EdgeInsets.all(13),
+              child: Card(
+                child: Column(
+                  children: [
+                    Container(
+                      height: 45,
+                      width: 40,
+                      // color: Colors.accents,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(3),
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg"),
+                            fit: BoxFit.fill,
+                          )),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +86,10 @@ class _ExplorerDashboardState extends State<ExplorerDashboard> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      ExpertBlock(),
+                      GestureDetector(
+                        child: ExpertBlock(),
+                        onTap: () => checkExperts(context),
+                      ),
                       ExpertBlock(),
                       ExpertBlock(),
                       ExpertBlock(),

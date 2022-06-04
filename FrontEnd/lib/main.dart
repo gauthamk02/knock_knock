@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Knocknock',
       theme: AppTheme(context),
-      home: ExplorerDashboard(),
-      // initialRoute: '/signin',
+      // home: ExplorerDashboard(),
+      initialRoute: '/explorer',
       routes: routes,
     );
   }
