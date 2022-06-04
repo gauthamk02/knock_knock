@@ -1,13 +1,13 @@
 const express = require('express');
-const explorerController = require('../controllers/explorer.controller.js');
+const explorerController = require('../Controllers/explorer.controllers');
 const router = express.Router(); 
 
 
 
 router.post('/getProfileDetails',explorerController.getProfileDetails);
-router.post('/updateProfile',explorerController.updatePro);
-router.get('/getRelatedPlaces', )
-router.get('/getRelatedEvents',  )
+router.post('/updateProfile',explorerController.updateProfileDetails);
+router.get('/getRelatedPeople', explorerController.getRelatedPeople);
+router.get('/getRelatedEvents',  explorerController.getRelatedEvents);
 // router.get('/me', checkAuth, explorerController.getMe); 
 
 

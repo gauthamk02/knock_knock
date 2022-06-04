@@ -1,13 +1,16 @@
 const express = require('express');
-const userControllers = require('../controllers/users.controllers');
+const userControllers = require('../Controllers/user.controllers');
 const router = express.Router(); 
 
 //  Required for authentication
 // const checkAuth = require('../middleware/checkAuth.middleware');
 
 
-router.post('/signup',userControllers.userRegister);
-router.post('/login',userControllers.userLogin);
+router.post('/signup',userControllers.createUserDetails);
+router.post('/login',userControllers.getUserDetails);
+
+router.post('/delete',userControllers.deleteUserDetails);
+// router.post('/get',userControllers.getUserDetails);
 
 // router.get('/me', checkAuth, userControllers.getMe); 
 
