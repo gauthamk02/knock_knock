@@ -37,7 +37,7 @@ class ExpertBlock extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "kBodyText habibi",
-                  style: kBodyText,
+                  style: kBodyText1,
                 ),
                 Text(
                   'Rating',
