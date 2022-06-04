@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:twilio_phone_verify/twilio_phone_verify.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../widgets/widget.dart';
 import '../constants.dart';
 
@@ -10,6 +11,19 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   bool passwordVisibility = true;
+  late TwilioPhoneVerify _twilioPhoneVerify;
+  TextEditingController _phoneNumberController = TextEditingController();
+  TextEditingController _otpController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _twilioPhoneVerify = TwilioPhoneVerify(
+        accountSid: dotenv.env['ACCSID']!,
+        serviceSid: dotenv.env['SERSID']!,
+        authToken: dotenv.env['AUTHTOKEN']!);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,9 +71,10 @@ class _RegisterPageState extends State<RegisterPage> {
                             hintText: 'Email',
                             inputType: TextInputType.emailAddress,
                           ),
-                          const MyTextField(
+                          MyTextField(
                             hintText: 'Phone',
                             inputType: TextInputType.phone,
+                            controller: _phoneNumberController,
                           ),
                           MyPasswordField(
                             isPasswordVisible: passwordVisibility,
@@ -77,7 +92,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       children: [
                         const Text(
                           "Already have an account? ",
-                          style: kBodyText,
+                          style: kBodyText1,
                         ),
                         TextButton(
                           child: Text("Sign In"),
@@ -95,7 +110,73 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     MyTextButton(
                       buttonName: 'Register',
-                      onTap: () {},
+                      onTap: () async {
+                        var twilioResponse = await _twilioPhoneVerify
+                            .sendSmsCode(_phoneNumberController.text);
+
+                        if (twilioResponse.successful!) {
+                          print("Code Sent");
+                        } else {
+                          print(twilioResponse.errorMessage);
+                        }
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                actions: [
+                                  ElevatedButton(
+                                      onPressed: () async {
+                                        var twilioResponse2 =
+                                            await _twilioPhoneVerify
+                                                .verifySmsCode(
+                                                    phone:
+                                                        _phoneNumberController
+                                                            .text,
+                                                    code: _otpController.text);
+
+                                        if (twilioResponse2.successful!) {
+                                          if (twilioResponse2
+                                                  .verification?.status ==
+                                              VerificationStatus.approved) {
+                                            print('Phone number is approved');
+                                            Navigator.of(context)
+                                                .popAndPushNamed(
+                                                    '/explorer-dashboard');
+                                          } else {
+                                            print('Invalid code');
+                                          }
+                                        } else {
+                                          print(twilioResponse.errorMessage);
+                                        }
+                                      },
+                                      child: const Text("Verify"))
+                                ],
+                                title: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "OTP",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge,
+                                      ),
+                                    ]),
+                                content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      const Text(
+                                          "We,ve sent an OTP to your number."),
+                                      MyTextField(
+                                        hintText: "Enter the OTP",
+                                        inputType: TextInputType.number,
+                                        controller: _otpController,
+                                      ),
+                                    ]),
+                              );
+                            });
+                      },
                       bgColor: kBackgroundColor,
                       textColor: kPrimaryTextColor,
                     )

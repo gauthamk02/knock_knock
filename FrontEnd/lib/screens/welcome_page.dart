@@ -40,7 +40,7 @@ class WelcomePage extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: Text(
                         "Bring together your files, your tools, project and people.Including a new mobile and desktop application.",
-                        style: kBodyText,
+                        style: kBodyText1,
                         textAlign: TextAlign.center,
                       ),
                     )
