@@ -2,7 +2,7 @@
 // const bcrypt = require('bcrypt');
 // require('dotenv').config()
 // const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const Explorer = require('../Models/explorer');
 
 
 // -------------------------------------- User Related Operation -------------------------
@@ -41,40 +41,32 @@ const updateProfileDetails = async (req, res ) => {
 }
 
 // ---------------------------EVENTS RELATED OPERATIONS -----------------------------------
-const createEvent = async (req, res ) => {
+const getRelatedPeople = async (req, res ) => {
     
-    // To Do 
-    // create Event for the user parsing the body, userId
+    // To do 
+    // Give data back based on interest
+
     res.status(200).json({
         "someRandome" : "data"
     })
 }
 
-const getMyEvents = async (req, res ) => {
+const getRelatedEvents = async (req, res ) => {
     
     // To Do 
-    // Get all the events of current User
+    // Get all the events of related to current user
     res.status(200).json({
         "someRandome" : "data"
     })
 }
 
 
-const updateEvents = async (req, res ) => {
-    
-    // To Do 
-    // update the event of the user.
-    res.status(200).json({
-        "someRandome" : "data"
-    })
-}
 
 
 module.exports = {
-    getMe,
     getProfileDetails,
-    updateEvents,
-    getMyEvents,
-    createEvent,
-    updateEvents
+    updateProfileDetails,
+
+    getRelatedPeople,
+    getRelatedEvents
 }

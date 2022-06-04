@@ -1,5 +1,5 @@
 const express = require('express');
-const expertController = require('../controllers/expert.controllers.js');
+const expertController = require('../Controllers/expert.controllers');
 const router = express.Router(); 
 
 

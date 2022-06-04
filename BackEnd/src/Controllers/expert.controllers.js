@@ -2,7 +2,7 @@
 // const bcrypt = require('bcrypt');
 // require('dotenv').config()
 // const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const Expert = require('../Models/expert');
 
 
 // -------------------------------------- User Related Operation -------------------------
@@ -23,6 +23,7 @@ const User = require('../models/user');
 // }}
 
 const getProfileDetails = async (req, res ) => {
+    
     
     // To Do 
     // Get detials of the user parsing the body, userId
@@ -71,8 +72,9 @@ const updateEvents = async (req, res ) => {
 
 
 module.exports = {
-    getMe,
+    //getMe,
     getProfileDetails,
+    updateProfileDetails,
     updateEvents,
     getMyEvents,
     createEvent,
