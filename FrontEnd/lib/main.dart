@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:knock_knock/screens/explorer-dashboard.dart';
 import 'constants.dart';
 import './screens/screen.dart';
 import './screens/register_page.dart';
@@ -21,10 +22,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Sign In Sign Up Ui',
+      title: 'Knocknock',
       theme: AppTheme(context),
-      home: RegisterPage(),
-      initialRoute: '/signin',
+      home: ExplorerDashboard(),
+      // initialRoute: '/signin',
       routes: routes,
     );
   }
