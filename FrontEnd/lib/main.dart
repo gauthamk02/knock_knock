@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'constants.dart';
-import './screens/screen.dart';
-import './screens/register_page.dart';
 import './navigator.dart';
-import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  await dotenv.load();
   runApp(
       // MultiProvider(
       //   providers:[
@@ -21,10 +20,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Sign In Sign Up Ui',
+      title: 'Knocknock',
       theme: AppTheme(context),
-      home: RegisterPage(),
-      initialRoute: '/signin',
+
+      //home: ExplorerDashboard(),
+      initialRoute: '/register',
       routes: routes,
     );
   }
@@ -32,9 +32,11 @@ class MyApp extends StatelessWidget {
 
 ThemeData AppTheme(BuildContext context) {
   return ThemeData(
-    textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
+    textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
+        .copyWith(bodyText1: kBodyText1, bodyText2: kBodyText2),
+    // textTheme: TextTheme(bodyLarge: kSubheadingtextStyle, bodyText1: kBodyText),
     scaffoldBackgroundColor: kBackgroundColor,
-    primarySwatch: Colors.blue,
+    primarySwatch: Colors.teal,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 }

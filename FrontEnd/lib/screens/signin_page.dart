@@ -16,6 +16,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: kBackgroundColor,
         elevation: 0,
         leading: IconButton(
@@ -76,7 +77,7 @@ class _SignInPageState extends State<SignInPage> {
                       children: [
                         Text(
                           "Dont't have an account? ",
-                          style: kBodyText,
+                          style: kBodyText1,
                         ),
                         GestureDetector(
                           onTap: () {
@@ -96,8 +97,7 @@ class _SignInPageState extends State<SignInPage> {
                               Navigator.of(context)
                                   .popAndPushNamed("/register");
                             },
-                          )
-                          ,
+                          ),
                         )
                       ],
                     ),
