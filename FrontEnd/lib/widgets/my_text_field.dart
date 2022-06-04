@@ -7,33 +7,36 @@ class MyTextField extends StatelessWidget {
     Key? key,
     required this.hintText,
     required this.inputType,
+    this.controller,
   }) : super(key: key);
   final String hintText;
   final TextInputType inputType;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
-        style: kBodyText.copyWith(color: Colors.white),
+        controller: controller,
+        style: Theme.of(context).textTheme.bodyText1,
         keyboardType: inputType,
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(20),
           hintText: hintText,
-          hintStyle: kBodyText,
+          hintStyle: kBodyText1,
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: kTextFieldBorder,
               width: 1,
             ),
             borderRadius: BorderRadius.circular(18),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-              width: 1,
+            borderSide: const BorderSide(
+              color: kTextFieldBorder,
+              width: 2,
             ),
             borderRadius: BorderRadius.circular(18),
           ),

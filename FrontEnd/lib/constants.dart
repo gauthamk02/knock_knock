@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 // Colors
@@ -17,11 +18,6 @@ const kHeadline = TextStyle(
   fontSize: 34,
   fontWeight: FontWeight.bold,
 );
-
-const kBodyText = TextStyle(
-  color: kSecondaryTextColor,
-  fontSize: 15,
-);
 const kTitleTextStyle = TextStyle(
   fontSize: 18,
   color: kTextColor,
@@ -32,14 +28,14 @@ const kButtonText = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.bold,
 );
-const kHeadingextStyle = TextStyle(
+const kHeadingtextStyle = TextStyle(
   fontSize: 28,
   color: kTextColor,
   fontWeight: FontWeight.bold,
 );
-const kSubheadingextStyle = TextStyle(
+const kSubheadingtextStyle = TextStyle(
   fontSize: 24,
-  color: Color(0xFF61688B),
+  color: kPrimaryTextColor,
   height: 2,
 );
 const kSubtitleTextSyule = TextStyle(
@@ -47,5 +43,18 @@ const kSubtitleTextSyule = TextStyle(
   color: kTextColor,
   // fontWeight: FontWeight.bold,
 );
+const kBodyText1 = TextStyle(
+  color: kSecondaryTextColor,
+  fontSize: 15,
+);
 const kBodyText2 =
     TextStyle(fontSize: 28, fontWeight: FontWeight.w500, color: Colors.teal);
+// const kButtonTheme = ElevatedButtonThemeData(
+//   style: ButtonStyle(
+//     backgroundColor: MaterialStateProperty.all(kBlueColor),
+//     foregroundColor: Colors.white,
+//     shape: RoundedRectangleBorder(
+//       borderRadius: BorderRadius.circular(8),
+//     ),
+//   ),
+// );
