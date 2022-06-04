@@ -30,71 +30,74 @@ class _ExplorerDashboardState extends State<ExplorerDashboard> {
         title: const Text("Explorer"),
       ),
       body: Container(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 5,
-            ),
-            Text(
-              "Experts",
-              textAlign: TextAlign.start,
-              style: kTitleTextStyle,
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.95,
-              height: MediaQuery.of(context).size.height * 0.35,
-              // color: Colors.red,
-              // child: ExpertBlock(),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    ExpertBlock(),
-                    ExpertBlock(),
-                    ExpertBlock(),
-                    ExpertBlock(),
-                    ExpertBlock(),
-                    ExpertBlock()
-                  ],
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                "Experts",
+                textAlign: TextAlign.start,
+                style: kTitleTextStyle,
+              ),
+              SizedBox(
+                height: 1,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.95,
+                height: MediaQuery.of(context).size.height * 0.4,
+                // color: Colors.red,
+                // child: ExpertBlock(),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      ExpertBlock(),
+                      ExpertBlock(),
+                      ExpertBlock(),
+                      ExpertBlock(),
+                      ExpertBlock(),
+                      ExpertBlock()
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              "Upcoming Events",
-              textAlign: TextAlign.start,
-              style: kTitleTextStyle,
-            ),
-            SizedBox(
-              height: 6,
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.38,
-              width: MediaQuery.of(context).size.width * 0.98,
-              // color: Colors.green,
-              child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
-                    children: [
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                    ],
-                  )),
-            )
-          ],
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Upcoming Events",
+                textAlign: TextAlign.start,
+                style: kTitleTextStyle,
+              ),
+              SizedBox(
+                height: 6,
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.38,
+                width: MediaQuery.of(context).size.width * 0.94,
+                // color: Colors.green,
+                child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      children: [
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                      ],
+                    )),
+              )
+            ],
+          ),
         ),
       ),
     );

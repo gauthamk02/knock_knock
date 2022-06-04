@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:knock_knock/screens/expert-dashboard.dart';
 import 'package:knock_knock/screens/explorer-dashboard.dart';
 import 'constants.dart';
 import './screens/screen.dart';
@@ -35,7 +36,7 @@ ThemeData AppTheme(BuildContext context) {
   return ThemeData(
     textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
     scaffoldBackgroundColor: kBackgroundColor,
-    primarySwatch: Colors.blue,
+    primarySwatch: Colors.teal,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 }

@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import '../constants.dart';
 
-class ExpertBlock extends StatelessWidget {
-  const ExpertBlock({Key? key}) : super(key: key);
+class ExplorerBlock extends StatelessWidget {
+  const ExplorerBlock({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.43,
+      // width: 135,
       child: Card(
         elevation: 8,
         child: Column(children: <Widget>[
           SizedBox(
-            height: 7,
+            height: 10,
           ),
           Container(
             width: 90,
             height: 120,
             padding: EdgeInsets.all(20),
+            // height: index.isEven ? 200 : 240,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               image: DecorationImage(
