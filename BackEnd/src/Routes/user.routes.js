@@ -6,11 +6,11 @@ const router = express.Router();
 // const checkAuth = require('../middleware/checkAuth.middleware');
 
 
-router.post('/signup',userControllers.createUserDetails);
-router.post('/login',userControllers.getUserDetails);
+router.post('/signup', userControllers.createUserDetails);
+router.post('/login', userControllers.getUserDetails);
 
 router.post('/delete',userControllers.deleteUserDetails);
-// router.post('/get',userControllers.getUserDetails);
+router.post('/get',userControllers.getUserDetails);
 
 // router.get('/me', checkAuth, userControllers.getMe); 
 

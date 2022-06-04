@@ -6,9 +6,8 @@ const sequelize = require("../core/db");
 const user = sequelize.define("user", {
     uuid: {
         type: Sequelize.UUID,
-        default : Sequelize.UUIDV4,
+        defaultValue : Sequelize.UUIDV4,
         primaryKey : true,
-        allowNull : false
     },
     name : {
         type : Sequelize.STRING,
@@ -29,7 +28,20 @@ const user = sequelize.define("user", {
     type : {
         type : Sequelize.ENUM,
         values : ['expert', 'explorer']
-    }
-})
+    },
+    password : {
+        type : Sequelize.STRING,
+        allowNull : false
+    },
+    
+});
+
+User.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+User.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.local.password);
+};
 
 module.exports = user;
