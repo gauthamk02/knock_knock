@@ -5,7 +5,7 @@
 const Expert = require('../Models/expert');
 const Explorer = require("../Models/explorer");
 const User = require("../Models/user");
-
+const Post = require("../Models/Post")
 
 const getProfileDetails = async (req, res ) => {
     await Expert.findOne({
@@ -44,10 +44,11 @@ const updateProfileDetails = async (req, res ) => {
 // ---------------------------EVENTS RELATED OPERATIONS -----------------------------------
 const createEvent = async (req, res ) => {
 
-    await Event.create({
+    await Post.create({
         details : res?.body?.id,
         date : res?.body?.date,
         authorId : null,//TODO get the id of currently logged in user
+        isEvent : true
     })
     .then( () => res.status(200).json( {message : "Successfuly Created", success : true }))
     .catch( () => res.status(400).json( { message : "Unkknown Error", success: false }))
@@ -64,10 +65,10 @@ const getMyEvents = async (req, res ) => {
 
 
 const updateEvents = async (req, res ) => {
-    Event.update( {
+    Post.update( {
         details: res?.body?.details,
         date: res?.body?.details
-    },  { where : { uuid  : req.body.eventId , authorId:null }}) //TODO get user id
+    },  { where : { uuid  : req.body.eventId , authorId : null, isEvent : true }}) //TODO get user id
         .then( ()=> {
             res.status(200).json( { message : "Success", success: true })
         })

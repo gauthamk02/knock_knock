@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize-cockroachdb");
 const sequelize = require("../core/db");
-const event = sequelize.define("event", {
+const post = sequelize.define("event", {
     uuid : {
         type: Sequelize.UUID,
         default : Sequelize.UUIDV4,
@@ -14,8 +14,12 @@ const event = sequelize.define("event", {
     date : {
         type : sequelize.DATETIME,
         allowNull: false,
+    },
+    isEvent : {
+        type : Sequelize.BOOLEAN,
+        allowNull: false
     }
 });
 
-event.hasOne(user,{foreignKey: 'authorId', targetKey: 'uuid'});
+post.hasOne(user,{foreignKey: 'authorId', targetKey: 'uuid'});
 
