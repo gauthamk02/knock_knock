@@ -47,6 +47,7 @@ class _ExplorerDashboardState extends State<ExplorerDashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             icon: const Icon(

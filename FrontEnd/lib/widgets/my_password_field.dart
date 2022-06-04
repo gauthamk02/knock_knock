@@ -16,7 +16,7 @@ class MyPasswordField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
-        style: kBodyText.copyWith(
+        style: kBodyText1.copyWith(
           color: Colors.white,
         ),
         obscureText: isPasswordVisible,
@@ -37,7 +37,7 @@ class MyPasswordField extends StatelessWidget {
           ),
           contentPadding: EdgeInsets.all(20),
           hintText: 'Password',
-          hintStyle: kBodyText,
+          hintStyle: kBodyText1,
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
               color: kTextFieldBorder,
