@@ -33,6 +33,12 @@ Just Knock Knock to someone</p>
 </ul>
 <p class="has-line-data" data-line-start="31" data-line-end="32">FRONTEND</p>
 <ul>
-<li class="has-line-data" data-line-start="33" data-line-end="34">something</li>
+<li class="has-line-data" data-line-start="33" data-line-end="34"> For the front end you need to make an account in Twillio, start a SMS authentication and service.</li>
 </ul>
-![](https://imgur.com/a/K64YKpD)
+Copy the Tokens from Twillio in the format given below into `.env` file and store it in `/FrontEnd` folder.
+```
+ACCSID=[ACCOUNT ID]
+SERSID=[SERVICE ID]
+AUTHTOKEN=[AUTH TOKEN]
+```
+![Alt](https://imgur.com/a/K64YKpD)
