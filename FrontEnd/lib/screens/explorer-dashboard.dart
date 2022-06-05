@@ -72,7 +72,7 @@ class _ExplorerDashboardState extends State<ExplorerDashboard> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    ProfileProvider.getProfileByLoction("sdf");
+    //ProfileProvider.getProfileByLoction("sdf");
   }
 
   @override

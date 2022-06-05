@@ -24,9 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Knocknock',
       theme: AppTheme(context),
-
-      //home: Dashboard(),
-      initialRoute: '/register',
+      initialRoute: '/signin',
       routes: routes,
     );
   }

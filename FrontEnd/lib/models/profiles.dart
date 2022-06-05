@@ -34,7 +34,7 @@ class ProfileProvider with ChangeNotifier {
     var data = json.decode(response) as List<dynamic>;
     // print(data[0]);
     for (int i = 0; i < data.length; i++) {
-      print(data[i]['name']+data[i]['type']);
+      print(data[i]['name'] + data[i]['type']);
       _profiles.add(Profile(
           data[i]['uuid'],
           data[i]['name'],
