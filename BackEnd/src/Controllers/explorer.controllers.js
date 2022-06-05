@@ -8,7 +8,7 @@ const User = require("../Models/user");
 
 
 const getProfileDetails = async (req, res ) => {
-    await User.findOne({ where : { uuid : res.body.userId }})
+    await User.findOne({ where : { uuid : req.body.userId }})
     .then( (response)=> {
         res.status(200).json( response.dataValues )
     })
@@ -21,11 +21,11 @@ const getProfileDetails = async (req, res ) => {
 
 const updateProfileDetails = async (req, res ) => {
     await Explorer.update({
-        aboutYourself : res.body.aboutYourself,
-        profilePic : res.body.profilePic,
-        interest : res.body.interest,
-        language : res.body.language
-    }, { where : { uuid : res.body.userId }})
+        aboutYourself : req.body.aboutYourself,
+        profilePic : req.body.profilePic,
+        interest : req.body.interest,
+        language : req.body.language
+    }, { where : { uuid : req.body.userId }})
     .then( ()=> {
         res.status(200).json( { message : "Success", success: true })
     })
@@ -38,11 +38,10 @@ const updateProfileDetails = async (req, res ) => {
 // ---------------------------EVENTS RELATED OPERATIONS -----------------------------------
 const getRelatedPeople = async (req, res ) => {
     await Explorer.findAll({
-        aboutYourself : res.body.aboutYourself,
-        profilePic : res.body.profilePic,
-        interest : res.body.interest,
-        language : res.body.language
-    }, { where : { interest : res.body.interest }})
+        where :  {
+            interest : req.body.interest
+        }
+      })
     .then( ()=> {
         res.status(200).json( { message : "Success", success: true })
     })

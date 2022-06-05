@@ -3,35 +3,20 @@
 // require('dotenv').config()
 // const jwt = require('jsonwebtoken');
 const Expert = require('../Models/expert');
-const Explorer = require("../Models/explorer");
-const User = require("../Models/user");
-const Post = require("../Models/Post")
+const Post = require("../Models/events")
 
 const getProfileDetails = async (req, res ) => {
-    await Expert.findOne({
-        aboutYourself : res.body.aboutYourself,
-        profilePic : res.body.profilePic,
-        interest : res.body.interest,
-        language : res.body.language,
-        areaExpertise : res.body.areaExpertise,
-    }, { where : { uuid : res?.body?.userId }})
-        .then( ()=> {
-            res.status(200).json( { message : "Success", success: true })
-        })
-        .catch( (error)=>  {
-            console.log(error)
-            res.status(404).json( { message :  error, success : false})
-        })
+    // To do  
 }
 
 const updateProfileDetails = async (req, res ) => {
     await Expert.update({
-        aboutYourself : res.body.aboutYourself,
-        profilePic : res.body.profilePic,
-        interest : res.body.interest,
-        language : res.body.language,
-        areaExpertise : res.body.areaExpertise,
-    }, { where : { uuid : res.body.userId }})
+        aboutYourself : req.body.aboutYourself,
+        profilePic : req.body.profilePic,
+        interest : req.body.interest,
+        language : req.body.language,
+        areaExpertise : req.body.areaExpertise,
+    }, { where : { uuid : req.body.userId }})
         .then( ()=> {
             res.status(200).json( { message : "Success", success: true })
         })
@@ -45,8 +30,8 @@ const updateProfileDetails = async (req, res ) => {
 const createEvent = async (req, res ) => {
 
     await Post.create({
-        details : res?.body?.id,
-        date : res?.body?.date,
+        details : req.body.id,
+        date : req.body.date,
         authorId : null,//TODO get the id of currently logged in user
         isEvent : true
     })
@@ -66,8 +51,8 @@ const getMyEvents = async (req, res ) => {
 
 const updateEvents = async (req, res ) => {
     Post.update( {
-        details: res?.body?.details,
-        date: res?.body?.details
+        details: req.body.details,
+        date: req.body.details
     },  { where : { uuid  : req.body.eventId , authorId : null, isEvent : true }}) //TODO get user id
         .then( ()=> {
             res.status(200).json( { message : "Success", success: true })
