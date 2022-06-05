@@ -8,7 +8,6 @@ const expert = sequelize.define("expert", {
         type: Sequelize.UUID,
         default : Sequelize.UUIDV4,
         primaryKey : true,
-        allowNull : false
     },
     aboutYourself : {
         type : Sequelize.TEXT,
@@ -20,15 +19,15 @@ const expert = sequelize.define("expert", {
     },
     interest : {
         type : Sequelize.STRING,
-        allowNull : false
+        allowNull : true
     },
     language : {
         type : Sequelize.STRING,
-        allowNull : false
+        allowNull : true
     },
     areaExpertise : {
         type : Sequelize.INTEGER,
-        allowNull : false
+        allowNull : true
     }
 
 })
