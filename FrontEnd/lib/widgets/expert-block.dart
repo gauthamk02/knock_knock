@@ -41,15 +41,9 @@ class ExpertBlock extends StatelessWidget {
                 ),
                 Text(
                   'Rating',
-                  style: TextStyle(
-                    color: kTextColor.withOpacity(.5),
-                  ),
                 ),
                 Text(
                   'Lang2',
-                  style: TextStyle(
-                    color: kTextColor.withOpacity(.5),
-                  ),
                 )
               ],
             ),
