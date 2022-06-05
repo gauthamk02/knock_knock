@@ -27,14 +27,14 @@ const User = require('../Models/user');
 
 const updateUserDetails = async (req, res ) => {
 
-    const hashPassword = bcrypt.hash(req.body.password, 10)
+    // const hashPassword = bcrypt.hash(req.body.password, 10)
 
     await User.update( { 
         name : res.body.name,
         phoneNumber : res.body.phoneNumber,
         age : res.body.age,
         currentLocation : res.body.currentLocation,
-        password : hashPassword,
+        password : res.body.password,
      },  { where : { phoneNumber  : req.body.phoneNumber } })
     .then( ()=> {
         res.status(200).json( { message : "Success", success: true })
@@ -76,10 +76,10 @@ const createUserDetails = async (req, res ) => {
 
 // ---------------------------EVENTS RELATED OPERATIONS -----------------------------------
 const getUserDetails = async (req, res ) => {
-    
-    await User.findOne( { where : { phoneNumber  : req.body.phoneNumber } })
+
+    await User.findAll( { where : { currentLocation  : req.query['currentLocation'] } })
     .then( (response)=> {
-        res.status(200).json( response.dataValues )
+        res.status(200).json( response )
     })
    .catch( (error)=>  {
        console.log(error)

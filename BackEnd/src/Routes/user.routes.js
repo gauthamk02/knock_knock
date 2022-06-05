@@ -10,7 +10,7 @@ router.post('/signup', userControllers.createUserDetails);
 router.post('/login', userControllers.authenticateUser);
 
 router.post('/delete',userControllers.deleteUserDetails);
-router.post('/get',userControllers.getUserDetails);
+router.get('/getUserByLocation',userControllers.getUserDetails);
 // router.get('/me', checkAuth, userControllers.getMe); 
 
 
