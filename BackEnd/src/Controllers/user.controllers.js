@@ -52,17 +52,15 @@ const createUserDetails = async (req, res ) => {
     // Checking wether the number exists or not 
     await User.findOne( { where : { phoneNumber  : req.body.phoneNumber } })
     .then( (respone) => {
-
         if(respone == null) {
-            const salt = bcrypt.genSaltSync(10, 'a');
-            const hashPassword = bcrypt.hashSync(req.body.password, salt);
+          //  const hashPassword = bcrypt.hashSync(req.body.password);
             User.create({
                 name : req.body.name,
                 age : req.body.age,
                 phoneNumber : req.body.phoneNumber,
                 currentLocation : req.body.currentLocation,
                 type : req.body.type,
-                password : hashPassword
+                password : req.body.password
             })
             .then( () => res.status(200).json( {message : "Successfuly Created", success : true }))
             .catch( (error) => res.status(400).json( { message : error, success: false }))
@@ -72,7 +70,7 @@ const createUserDetails = async (req, res ) => {
         }
 
     })
-    .catch(()=> res.status(400).json( {message : "Unknown Error", success : false}))
+    .catch((error)=> res.status(400).json( {message : error, success : false}))
    
 }
 
@@ -107,20 +105,18 @@ const deleteUserDetails = async (req, res ) => {
 const authenticateUser = async (req, res) => {
     await User.findOne( { where : { phoneNumber  : req.body.phoneNumber } })
     .then( (response)=> { 
-        const userData = JSON.parse( JSON.stringify (response.dataValues) )
-        
-        if(bcrypt.compare(req.body.password , userData.password)) {
-            console.log("Done")
+        var userData = JSON.parse( JSON.stringify (response.dataValues) )
+        if((req.body.password == userData.password)) {
+            delete userData.password
+            res.status(200).json( userData )
         }
         else{
-            console.log("Wrong")
+            res.status(400).json( {message : "Wrong Password" , success : false }  )
         }
 
-        res.status(200).json( response.dataValues )
     })
    .catch( (error)=>  {
-       console.log(error)
-        res.status(404).json( { message :  error, success : false})
+        res.status(404).json( { message :  "Number Not Found", success : false})
     
    } )
 }

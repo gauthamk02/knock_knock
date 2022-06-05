@@ -16,11 +16,11 @@ const sequelize = require('./core/db');
 const Expert = require('./Models/expert');
 const User = require('./Models/user');
 const Explorer = require('./Models/explorer'); 
-// const Events = require('./Models/events');
+const Post = require('./Models/posts');
 //Relations 
 User.hasOne(Expert)
 User.hasOne(Explorer)
-// Events.hasOne(User)
+Post.hasOne(User)
 
 // If any changes are made in the Model then uncomment it once to force overwrite
 // Caution will delete prev data stored

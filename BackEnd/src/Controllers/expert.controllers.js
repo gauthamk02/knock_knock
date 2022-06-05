@@ -3,7 +3,7 @@
 // require('dotenv').config()
 // const jwt = require('jsonwebtoken');
 const Expert = require('../Models/expert');
-const Post = require("../Models/events")
+const Post = require("../Models/posts")
 
 const getProfileDetails = async (req, res ) => {
     // To do  
