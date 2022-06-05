@@ -70,10 +70,6 @@ class PeopleScreen extends StatelessWidget {
                     SizedBox(
                       height: 19,
                     ),
-                    // Text("Language: $language"),
-                    // SizedBox(
-                    //   height: 19,
-                    // ),
                     Text("City: $location"),
                     SizedBox(
                       height: 6,
@@ -93,43 +89,137 @@ class PeopleScreen extends StatelessWidget {
       child: GridView(
         children: <Widget>[
           GestureDetector(
-            child: ExpertBlock(),
+            child: ExpertBlock(
+                "Anshuman Swain",
+                "English, Hindi",
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Kochi",
+                "Expert"),
+            onTap: () => checkExperts(
+                context,
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Anshuman Swain",
+                "2345674567",
+                "Expert",
+                25,
+                "Playful and intellectually curious, he is constantly juggling a variety of passions, hobbies, careers, and friend groups",
+                "Hindi, engish",
+                "Kochi"),
+          ),
+          GestureDetector(
+            child: ExpertBlock(
+                "Anshuman Swain",
+                "English, Hindi",
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Kochi",
+                "Explorer"),
+            onTap: () => checkExperts(
+                context,
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Name Singh Khan",
+                "2345674567",
+                "Explorer",
+                35,
+                "Playful and intellectually curious, he is constantly juggling a variety of passions, hobbies, careers, and friend groups",
+                "Hindi, engish",
+                "Delhi"),
+          ),
+          GestureDetector(
+            child: ExpertBlock(
+                "Anshuman Swain",
+                "English, Hindi",
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Kochi",
+                "Explorer"),
+            onTap: () => checkExperts(
+                context,
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Name Singh Khan",
+                "2345674567",
+                "Explorer",
+                30,
+                "descripf and sdk dfnwd f efnkejrg efb dgbjne grbbnedkjrg erkjvevn ergkn vkejv evjkevne rvn vekjrnvj rfnnervjner",
+                "Hindi, engish",
+                "Kaatmandu"),
+          ),
+          GestureDetector(
+            child: ExpertBlock(
+                "Anshuman Swain",
+                "English, Hindi",
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Kochi",
+                "Expert"),
             onTap: () => checkExperts(
                 context,
                 "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
                 "Name Singh Khan",
                 "2345674567",
                 "Expert",
+                34,
+                "descripf and sdk dfnwd f efnkejrg efb dgbjne grbbnedkjrg erkjvevn ergkn vkejv evjkevne rvn vekjrnvj rfnnervjner",
+                "Hindi, engish",
+                "Kochi"),
+          ),
+          GestureDetector(
+            child: ExpertBlock(
+                "Anshuman Swain",
+                "English, Hindi",
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Kochi",
+                "Explorer"),
+            onTap: () => checkExperts(
+                context,
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Name Singh Khan",
+                "2345674567",
+                "Explorer",
                 25,
                 "descripf and sdk dfnwd f efnkejrg efb dgbjne grbbnedkjrg erkjvevn ergkn vkejv evjkevne rvn vekjrnvj rfnnervjner",
                 "Hindi, engish",
                 "Kochi"),
           ),
-          ExpertBlock(),
-          ExpertBlock(),
-          ExpertBlock(),
-          ExpertBlock(),
-          Container(
-            margin: EdgeInsets.all(4),
-            color: Colors.green,
+          GestureDetector(
+            child: ExpertBlock(
+                "Anshuman Swain",
+                "English, Hindi",
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Kochi",
+                "Expert"),
+            onTap: () => checkExperts(
+                context,
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Name Singh Khan",
+                "2345674567",
+                "Expert",
+                45,
+                "descripf and sdk dfnwd f efnkejrg efb dgbjne grbbnedkjrg erkjvevn ergkn vkejv evjkevne rvn vekjrnvj rfnnervjner",
+                "Hindi, engish",
+                "Kochi"),
           ),
-          Container(
-            margin: EdgeInsets.all(4),
-            color: Colors.green,
+          GestureDetector(
+            child: ExpertBlock(
+                "Anshuman Swain",
+                "English, Hindi",
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Kochi",
+                "Explorer"),
+            onTap: () => checkExperts(
+                context,
+                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Name Singh Khan",
+                "2345674567",
+                "Explorer",
+                29,
+                "descripf and sdk dfnwd f efnkejrg efb dgbjne grbbnedkjrg erkjvevn ergkn vkejv evjkevne rvn vekjrnvj rfnnervjner",
+                "Hindi, engish",
+                "Kochi"),
           ),
-          Container(
-            margin: EdgeInsets.all(4),
-            color: Colors.green,
-          ),
-          Container(
-            margin: EdgeInsets.all(4),
-            color: Colors.green,
-          ),
-          Container(
-            margin: EdgeInsets.all(4),
-            color: Colors.green,
-          ),
-          ExpertBlock(),
+          ExpertBlock(
+              "Anshuman Swain",
+              "English, Hindi",
+              "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+              "Kochi",
+              "Explorer"),
         ],
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
