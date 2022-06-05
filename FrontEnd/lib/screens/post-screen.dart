@@ -11,37 +11,57 @@ class PostPage extends StatefulWidget {
 }
 
 class _PostPageState extends State<PostPage> {
-  List<PostCard> cards = [];
-
-  PostCard card1 = PostCard(
-      uuid: "123",
-      author: "Gautham",
-      content: "Looking for someone to go to the movies",
-      datetime: DateTime.now(),
-      pfpurl: "https://avatars.githubusercontent.com/u/48323819?s=40&v=4");
+  List<PostCard> _cards = [];
 
   @override
   void initState() {
     super.initState();
-    cards.add(card1);
-    cards.add(PostCard(
+    _cards.add(PostCard(
         uuid: "123",
-        author: "Gautham",
+        author: "Gautham Krishnan",
         content: "Looking for someone to go to the movies",
         datetime: DateTime.now(),
-        pfpurl: "https://avatars.githubusercontent.com/u/48323819?s=40&v=4"));
-    cards.add(PostCard(
+        pfpurl:
+            "https://images.unsplash.com/photo-1642231748800-a44a5a1a2a0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=839&q=80"));
+    _cards.add(PostCard(
         uuid: "123",
-        author: "Rahul",
-        content: "Looking for someone to go to the movies",
+        author: "Dharshan Raval",
+        content: "Hey is anyone interested for trekking this weekend.",
         datetime: DateTime.now(),
-        pfpurl: "https://avatars.githubusercontent.com/u/48323819?s=40&v=4"));
-    cards.add(PostCard(
+        pfpurl:
+            "https://wikibio.in/wp-content/uploads/2019/01/Darshan-Raval-image.jpg"));
+    _cards.add(PostCard(
         uuid: "123",
-        author: "Anshuman",
-        content: "Looking for someone to go to the movies",
+        author: "Aashray Katiyar",
+        content:
+            "Hey, I am new to Kochi and looking for people to go on a weekend trip.",
         datetime: DateTime.now(),
-        pfpurl: "https://avatars.githubusercontent.com/u/48323819?s=40&v=4"));
+        pfpurl:
+            "https://qph.fs.quoracdn.net/main-thumb-357007265-200-uisgvhlwjfzgzxavvrhslbkuzsamytye.jpeg"));
+    _cards.add(PostCard(
+        uuid: "123",
+        author: "Ann M",
+        content:
+            "Hey I am going on a road trip this weekend to Mumbai, contact me if you are interested.",
+        datetime: DateTime.now(),
+        pfpurl:
+            "https://images.unsplash.com/photo-1526520112421-5054395689a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"));
+    _cards.add(PostCard(
+        uuid: "123",
+        author: "Ashley Jain",
+        content:
+            "Is someone ineterested in coming to the Alan Walker concert with me",
+        datetime: DateTime.now(),
+        pfpurl:
+            "https://images.unsplash.com/photo-1610766920689-5d4c57e1dfba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=864&q=80"));
+    _cards.add(PostCard(
+        uuid: "123",
+        author: "Ivan Rossi",
+        content:
+            "There is party at home tomorrow, hmu if anyone is interested.",
+        datetime: DateTime.now(),
+        pfpurl:
+            "https://qph.fs.quoracdn.net/main-thumb-357007265-200-uisgvhlwjfzgzxavvrhslbkuzsamytye.jpeg"));
   }
 
   @override
@@ -50,9 +70,9 @@ class _PostPageState extends State<PostPage> {
       child: Container(
         child: ListView.builder(
           itemBuilder: ((context, index) {
-            return cards[index];
+            return _cards[index];
           }),
-          itemCount: cards.length,
+          itemCount: _cards.length,
           shrinkWrap: true,
         ),
       ),
@@ -170,8 +190,8 @@ class PostCard extends StatelessWidget {
         child: GestureDetector(
           onTap: () {
             print("works");
-            checkPosts(context, pfpurl, author, "1234455555", "Expert", 000,
-                content, "Languagge", "location");
+            checkPosts(context, pfpurl, author, "+919548120573", "Expert", 20,
+                content, "Hindi, English, Nepali", "location");
           },
           child: Container(
             child: Column(
@@ -196,7 +216,7 @@ class PostCard extends StatelessWidget {
                         //style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       SizedBox(
-                        width: 90,
+                        width: 10,
                       ),
                       // Text(
                       //   DateFormat('EEE, MMM d').format(datetime),
