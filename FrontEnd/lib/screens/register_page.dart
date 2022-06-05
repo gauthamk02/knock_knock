@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:twilio_phone_verify/twilio_phone_verify.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:http/http.dart' as http;
 import '../widgets/widget.dart';
 import '../constants.dart';
 
@@ -24,9 +25,21 @@ class _RegisterPageState extends State<RegisterPage> {
         authToken: dotenv.env['AUTHTOKEN']!);
   }
 
+  void _getCountriesList() async {
+    final response =
+        await http.post(Uri.parse('https://restcountries.eu/rest/v2/all'));
+    // await http
+    //     .post(Uri.parse('https://knockknockbackend.herokuapp.com/users/'));
+    if (response.statusCode == 200) {
+      print(response.body);
+    } else {
+      print(response.body);
+      print('Error getting countries list');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,

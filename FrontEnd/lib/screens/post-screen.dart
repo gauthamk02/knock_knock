@@ -3,27 +3,6 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:intl/intl.dart';
 
-// class PostPage extends StatelessWidget {
-//   PostPage({Key? key}) : super(key: key);
-
-//   PostCard card1 = PostCard(
-//       author: "Gautham",
-//       content: "Lokking for someone to go to the movies",
-//       datetime: DateTime.now(),
-//       pfpurl: "https://avatars.githubusercontent.com/u/48323819?s=40&v=4");
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: SingleChildScrollView(
-//         child: Column(
-//           children: <Widget>[card1],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class PostPage extends StatefulWidget {
   const PostPage({Key? key}) : super(key: key);
 
