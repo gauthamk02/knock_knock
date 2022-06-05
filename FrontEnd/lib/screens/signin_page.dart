@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../screens/screen.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:http/http.dart' as http;
 import '../widgets/widget.dart';
 
 class SignInPage extends StatefulWidget {
@@ -110,7 +110,22 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     MyTextButton(
                       buttonName: 'Sign In',
-                      onTap: () {},
+                      onTap: () async {
+                        var response = await http.post(
+                            Uri.parse(
+                                'https://knockknockbackend.herokuapp.com/users/login'),
+                            body: {
+                              'phoneNumber': _phoneNumberController.text,
+                              'password': _passwordController.text
+                            });
+                        if (response.statusCode == 200) {
+                          print(response.body);
+                          Navigator.of(context).popAndPushNamed('/dashboard');
+                        } else {
+                          print(response.statusCode);
+                          print(response.body);
+                        }
+                      },
                       bgColor: kBackgroundColor,
                       textColor: kPrimaryTextColor,
                     ),

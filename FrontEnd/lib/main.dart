@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme(context),
 
       //home: Dashboard(),
-      initialRoute: '/signin',
+      initialRoute: '/register',
       routes: routes,
     );
   }
