@@ -16,17 +16,18 @@ const sequelize = require('./core/db');
 const Expert = require('./Models/expert');
 const User = require('./Models/user');
 const Explorer = require('./Models/explorer'); 
-
+// const Events = require('./Models/events');
 //Relations 
 User.hasOne(Expert)
 User.hasOne(Explorer)
+// Events.hasOne(User)
 
 // If any changes are made in the Model then uncomment it once to force overwrite
 // Caution will delete prev data stored
 
 // sequelize.sync( {force : true} )
 // .then( (resutl) =>{
-//     console.log(resutl)
+//     //console.log(resutl)
 // } )
 // .catch( (error) => console.log(error))
 
