@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class ExpertBlock extends StatelessWidget {
-  const ExpertBlock({Key? key}) : super(key: key);
+  final String name;
+  final String lang;
+  final String url;
+  final String city;
+  final String type;
+
+  ExpertBlock(this.name, this.lang, this.url, this.city, this.type);
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +21,15 @@ class ExpertBlock extends StatelessWidget {
             height: 7,
           ),
           Container(
-            width: 80,
+            width: 95,
             height: 100,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               image: DecorationImage(
-                image: NetworkImage(
-                    "https://media.istockphoto.com/photos/explorer-holding-binoculars-picture-id180642049"),
+                image: NetworkImage("$url"),
+                // NetworkImage(
+                //     "https://media.istockphoto.com/photos/explorer-holding-binoculars-picture-id180642049"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -36,14 +43,14 @@ class ExpertBlock extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "kBodyText habibi",
+                  "$name",
                   style: kBodyText1,
                 ),
                 Text(
-                  'Rating',
+                  '$lang',
                 ),
                 Text(
-                  'Lang2',
+                  'City: $city',
                 )
               ],
             ),
