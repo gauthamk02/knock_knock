@@ -43,15 +43,11 @@ class ExplorerBlock extends StatelessWidget {
                   ),
                   Text(
                     'Rating',
-                    style: TextStyle(
-                      color: kTextColor.withOpacity(.5),
-                    ),
+                    style: kBodyText1,
                   ),
                   Text(
                     'Lang2',
-                    style: TextStyle(
-                      color: kTextColor.withOpacity(.5),
-                    ),
+                    style: kBodyText1,
                   )
                 ],
               ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'constants.dart';
+import './screens/explorer-dashboard.dart';
 import './navigator.dart';
 
 void main() async {
@@ -23,8 +24,8 @@ class MyApp extends StatelessWidget {
       title: 'Knocknock',
       theme: AppTheme(context),
 
-      //home: ExplorerDashboard(),
-      initialRoute: '/register',
+      home: ExplorerDashboard(),
+      // initialRoute: '/register',
       routes: routes,
     );
   }

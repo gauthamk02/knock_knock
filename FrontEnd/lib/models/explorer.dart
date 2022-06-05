@@ -8,3 +8,7 @@ class Explorer {
 
   Explorer(this.id, this.name, this.profileUrl, this.age);
 }
+
+class ExplorerProvider with ChangeNotifier{
+
+}

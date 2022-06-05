@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:knock_knock/models/expert.dart';
+import 'package:knock_knock/models/profiles.dart';
 import 'package:knock_knock/widgets/event-block.dart';
 import 'package:knock_knock/widgets/expert-block.dart';
 import '../constants.dart';
@@ -41,6 +43,13 @@ class _ExplorerDashboardState extends State<ExplorerDashboard> {
             ),
           );
         });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ProfileProvider.getProfileByLoction("sdf");
   }
 
   @override

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:collection';
+import 'package:flutter/services.dart';
+import 'dart:convert';
 
 class Expert {
   final String? id;
@@ -16,11 +19,20 @@ class Expert {
 }
 
 class ExpertProvider with ChangeNotifier {
-  List<Expert> _experts = [];
+  static List<Expert> _experts = [];
 
-  List<Expert> get experts {
+  static List<Expert> get experts {
     return [..._experts];
   }
-  // TODO addExpert
-  //
+
+  static Future<void> getData() async {
+    final response = await rootBundle.loadString('./assets/expert.json');
+    // print("ASD: $response");
+    var data = json.decode(response) as List<dynamic>;
+    print("Second: ${data[0]['uuid']}");
+    for (int i = 0; i < data.length; i++) {
+      _experts.add(Expert(data[0]['uuid'], data[0]['uuid'], data[0]['uuid'], data[0]['uuid'], data[0]['uuid'],data[0]['uuid'],data[0]['uuid'],
+          data[0]['uuid'], data[0]['uuid']));
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:knock_knock/widgets/event-popup.dart';
+// import 'package:knock_knock/widgets/event-popup.dart';
 import 'package:intl/intl.dart';
 import '../widgets/explorer-block.dart';
 import '../widgets/event-block.dart';
@@ -40,6 +40,7 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
         context: context,
         builder: (context) {
           return Container(
+            padding: EdgeInsets.all(4),
             // height: MediaQuery.of(context).size.height * 0.4,
             child: Card(
               margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
@@ -56,6 +57,7 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
                     Form(
                       key: _formKey,
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           Padding(
@@ -74,7 +76,7 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
                                     MediaQuery.of(context).viewInsets.bottom),
                             // padding: EdgeInsets.all(1),
                             child: TextFormField(
-                              maxLines: 3,
+                              maxLines: 2,
                               controller: _description,
                               decoration: const InputDecoration(
                                   labelText: "Description"),
@@ -148,60 +150,62 @@ class _ExpertDashboardState extends State<ExpertDashboard> {
         title: const Text("Expert"),
       ),
       body: Container(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 2,
-            ),
-            Text("NearBy Explorers!"),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.95,
-              height: MediaQuery.of(context).size.height * 0.4,
-              // color: Colors.red,
-              // child: ExpertBlock(),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    ExplorerBlock(),
-                    ExplorerBlock(),
-                    ExplorerBlock(),
-                    ExplorerBlock(),
-                    ExplorerBlock(),
-                    ExplorerBlock()
-                  ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 2,
+              ),
+              Text("Near By Explorers!"),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.95,
+                height: MediaQuery.of(context).size.height * 0.4,
+                // color: Colors.red,
+                // child: ExpertBlock(),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      ExplorerBlock(),
+                      ExplorerBlock(),
+                      ExplorerBlock(),
+                      ExplorerBlock(),
+                      ExplorerBlock(),
+                      ExplorerBlock()
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            const Text("Your Events"),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.38,
-              width: MediaQuery.of(context).size.width * 0.94,
-              // color: Colors.green,
-              child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
-                    children: [
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                      EventBlock(),
-                    ],
-                  )),
-            )
-          ],
+              SizedBox(
+                height: 10,
+              ),
+              const Text("Your Events"),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.38,
+                width: MediaQuery.of(context).size.width * 0.94,
+                // color: Colors.green,
+                child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      children: [
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                        EventBlock(),
+                      ],
+                    )),
+              )
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
