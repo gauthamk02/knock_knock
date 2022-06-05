@@ -32,13 +32,13 @@ class _PostPageState extends State<PostPage> {
         pfpurl: "https://avatars.githubusercontent.com/u/48323819?s=40&v=4"));
     cards.add(PostCard(
         uuid: "123",
-        author: "Gautham",
+        author: "Rahul",
         content: "Looking for someone to go to the movies",
         datetime: DateTime.now(),
         pfpurl: "https://avatars.githubusercontent.com/u/48323819?s=40&v=4"));
     cards.add(PostCard(
         uuid: "123",
-        author: "Gautham",
+        author: "Anshuman",
         content: "Looking for someone to go to the movies",
         datetime: DateTime.now(),
         pfpurl: "https://avatars.githubusercontent.com/u/48323819?s=40&v=4"));
@@ -47,20 +47,20 @@ class _PostPageState extends State<PostPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: SingleChildScrollView(
-        child: Container(
-          child: ListView.builder(
-            itemBuilder: ((context, index) {
-              return cards[index];
-            }),
-            itemCount: cards.length,
-            shrinkWrap: true,
-          ),
+      child: Container(
+        child: ListView.builder(
+          itemBuilder: ((context, index) {
+            return cards[index];
+          }),
+          itemCount: cards.length,
+          shrinkWrap: true,
         ),
       ),
     );
   }
 }
+
+//.
 
 class PostCard extends StatelessWidget {
   PostCard(
