@@ -2,7 +2,7 @@ const { Sequelize } = require("sequelize-cockroachdb");
 const sequelize = require("../core/db");
 
 
-const events = sequelize.define("events", {
+const posts = sequelize.define("posts", {
     uuid : {
         type: Sequelize.UUID,
         default : Sequelize.UUIDV4,
@@ -17,7 +17,6 @@ const events = sequelize.define("events", {
         type : Sequelize.BOOLEAN,
         allowNull: false
     }
-});
+})
 
-
-module.export = events;
+module.exports = posts;
