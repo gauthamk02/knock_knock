@@ -28,17 +28,16 @@ Just Knock Knock to someone</p>
 <p class="has-line-data" data-line-start="26" data-line-end="27">BACKEND</p>
 <ul>
 <li class="has-line-data" data-line-start="27" data-line-end="28">Switch current directory to Backend and run “docker-compose up” to start server []</li>
-<li class="has-line-data" data-line-start="28" data-line-end="29">Get credentials from the CoackroazDB</li>
-<li class="has-line-data" data-line-start="29" data-line-end="31">Set enviroment DATABASE_URL=“CoakroazDB url”</li>
+<li class="has-line-data" data-line-start="28" data-line-end="29">Get credentials from the <code>CoackroazDB</code></li>
+<li class="has-line-data" data-line-start="29" data-line-end="31">Set enviroment <code>DATABASE_URL=&quot;CoakroazDB url&quot;</code></li>
 </ul>
 <p class="has-line-data" data-line-start="31" data-line-end="32">FRONTEND</p>
 <ul>
-<li class="has-line-data" data-line-start="33" data-line-end="34"> For the front end you need to make an account in Twillio, start a SMS authentication and service.</li>
+<li class="has-line-data" data-line-start="33" data-line-end="34">For the front end you need to make an account in Twillio, start a SMS authentication and service.</li>
+<li class="has-line-data" data-line-start="34" data-line-end="36">Copy the Tokens from Twillio in the format given below into <code>.env</code> file and store it in <code>/FrontEnd folder</code>.</li>
 </ul>
-Copy the Tokens from Twillio in the format given below into `.env` file and store it in `/FrontEnd` folder.
-```
-ACCSID=[ACCOUNT ID]
+<pre><code class="has-line-data" data-line-start="37" data-line-end="41">ACCSID=[ACCOUNT ID]
 SERSID=[SERVICE ID]
 AUTHTOKEN=[AUTH TOKEN]
-```
-![Alt](https://imgur.com/a/K64YKpD)
+</code></pre>
+![](https://user-images.githubusercontent.com/69245931/172054802-4fb0bb1c-d002-4982-b6ff-1a7e3ca5f772.gif)
