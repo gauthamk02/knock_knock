@@ -12,6 +12,9 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPageState extends State<SignInPage> {
   bool isPasswordVisible = true;
+  TextEditingController _phoneNumberController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +30,6 @@ class _SignInPageState extends State<SignInPage> {
         ),
       ),
       body: SafeArea(
-        //to make page scrollable
         child: CustomScrollView(
           reverse: true,
           slivers: [
@@ -58,11 +60,13 @@ class _SignInPageState extends State<SignInPage> {
                             height: 60,
                           ),
                           MyTextField(
-                            hintText: 'Phone, email or username',
-                            inputType: TextInputType.text,
+                            hintText: 'Phone number',
+                            controller: _phoneNumberController,
+                            inputType: TextInputType.phone,
                           ),
                           MyPasswordField(
                             isPasswordVisible: isPasswordVisible,
+                            controller: _passwordController,
                             onTap: () {
                               setState(() {
                                 isPasswordVisible = !isPasswordVisible;
