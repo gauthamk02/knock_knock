@@ -5,16 +5,15 @@ import 'package:knock_knock/screens/dashboard.dart';
 import 'constants.dart';
 import './screens/explorer-dashboard.dart';
 import './navigator.dart';
+import 'package:provider/provider.dart';
+import './models/user.dart';
 
 void main() async {
   await dotenv.load();
-  runApp(
-      // MultiProvider(
-      //   providers:[
-
-      //   ]
-      //   ,child:MyApp())
-      MyApp());
+  runApp((MultiProvider(
+      providers: [Provider<UserProvider>(create: (_) => UserProvider())],
+      child: MyApp())));
+  // MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -24,9 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Knocknock',
       theme: AppTheme(context),
-
-      home: Dashboard(),
-      // initialRoute: '/register',
+      initialRoute: '/signin',
       routes: routes,
     );
   }

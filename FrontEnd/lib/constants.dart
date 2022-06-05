@@ -48,7 +48,7 @@ const kBodyText1 = TextStyle(
   fontSize: 15,
 );
 const kBodyText2 =
-    TextStyle(fontSize: 28, fontWeight: FontWeight.w500, color: Colors.teal);
+    TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Colors.teal);
 // const kButtonTheme = ElevatedButtonThemeData(
 //   style: ButtonStyle(
 //     backgroundColor: MaterialStateProperty.all(kBlueColor),
