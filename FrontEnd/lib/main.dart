@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:knock_knock/screens/dashboard.dart';
 import 'constants.dart';
 import './screens/explorer-dashboard.dart';
 import './navigator.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'Knocknock',
       theme: AppTheme(context),
 
-      home: ExplorerDashboard(),
+      home: Dashboard(),
       // initialRoute: '/register',
       routes: routes,
     );
