@@ -6,7 +6,7 @@ class EventBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90,
+      height: 150,
       // width: ,
       child: GestureDetector(
         onTap: () {},

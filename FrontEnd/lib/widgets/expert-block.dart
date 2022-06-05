@@ -7,7 +7,7 @@ class ExpertBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.43,
+      height: MediaQuery.of(context).size.height * 0.3,
       child: Card(
         elevation: 8,
         child: Column(children: <Widget>[
@@ -15,8 +15,8 @@ class ExpertBlock extends StatelessWidget {
             height: 7,
           ),
           Container(
-            width: 90,
-            height: 120,
+            width: 80,
+            height: 100,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
