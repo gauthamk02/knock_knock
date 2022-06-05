@@ -79,7 +79,6 @@ const getUserDetails = async (req, res ) => {
     
     await User.findOne( { where : { phoneNumber  : req.body.phoneNumber } })
     .then( (response)=> {
-        // console.log(userDetail)
         res.status(200).json( response.dataValues )
     })
    .catch( (error)=>  {
