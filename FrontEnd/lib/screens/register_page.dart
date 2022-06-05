@@ -6,6 +6,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import '../widgets/widget.dart';
 import '../constants.dart';
+import '../models/user.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -52,8 +53,10 @@ class _RegisterPageState extends State<RegisterPage> {
             }))
         .then((response) {
       if (response.statusCode == 200) {
-        Navigator.of(context).popAndPushNamed('/dashboard');
         print(response.body);
+        User user = User.userFromJSONString(response.body);
+        UserProvider.setUser(user);
+        Navigator.of(context).popAndPushNamed('/dashboard');
       } else {
         print(response.statusCode);
         print(response.body);

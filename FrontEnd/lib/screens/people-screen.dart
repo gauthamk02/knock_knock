@@ -87,6 +87,8 @@ class PeopleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: GridView(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
         children: <Widget>[
           GestureDetector(
             child: ExpertBlock(
@@ -108,14 +110,14 @@ class PeopleScreen extends StatelessWidget {
           ),
           GestureDetector(
             child: ExpertBlock(
-                "Anshuman Swain",
-                "English, Hindi",
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Gaurav Sharma",
+                "English, Hindi, French",
+                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
                 "Kochi",
                 "Explorer"),
             onTap: () => checkExperts(
                 context,
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
                 "Name Singh Khan",
                 "2345674567",
                 "Explorer",
@@ -126,14 +128,14 @@ class PeopleScreen extends StatelessWidget {
           ),
           GestureDetector(
             child: ExpertBlock(
-                "Anshuman Swain",
-                "English, Hindi",
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "Joe Doe",
+                "English, French",
+                "https://images.unsplash.com/photo-1592992584424-bb6c75136025?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                 "Kochi",
                 "Explorer"),
             onTap: () => checkExperts(
                 context,
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "https://images.unsplash.com/photo-1592992584424-bb6c75136025?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                 "Name Singh Khan",
                 "2345674567",
                 "Explorer",
@@ -144,14 +146,14 @@ class PeopleScreen extends StatelessWidget {
           ),
           GestureDetector(
             child: ExpertBlock(
-                "Anshuman Swain",
+                "Jessica H",
                 "English, Hindi",
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80",
                 "Kochi",
                 "Expert"),
             onTap: () => checkExperts(
                 context,
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80",
                 "Name Singh Khan",
                 "2345674567",
                 "Expert",
@@ -162,14 +164,14 @@ class PeopleScreen extends StatelessWidget {
           ),
           GestureDetector(
             child: ExpertBlock(
-                "Anshuman Swain",
+                "Ivan Rossi",
                 "English, Hindi",
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "https://images.unsplash.com/photo-1618077360395-f3068be8e001?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                 "Kochi",
                 "Explorer"),
             onTap: () => checkExperts(
                 context,
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "https://images.unsplash.com/photo-1618077360395-f3068be8e001?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
                 "Name Singh Khan",
                 "2345674567",
                 "Explorer",
@@ -180,14 +182,14 @@ class PeopleScreen extends StatelessWidget {
           ),
           GestureDetector(
             child: ExpertBlock(
-                "Anshuman Swain",
+                "Elon Musk",
                 "English, Hindi",
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "https://media.gq.com/photos/566ac3fec0f741b430e641e7/master/pass/elon-musk-gq-1215-01-sq.jpg",
                 "Kochi",
                 "Expert"),
             onTap: () => checkExperts(
                 context,
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "https://media.gq.com/photos/566ac3fec0f741b430e641e7/master/pass/elon-musk-gq-1215-01-sq.jpg",
                 "Name Singh Khan",
                 "2345674567",
                 "Expert",
@@ -198,14 +200,14 @@ class PeopleScreen extends StatelessWidget {
           ),
           GestureDetector(
             child: ExpertBlock(
-                "Anshuman Swain",
+                "Tim Cook",
                 "English, Hindi",
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "https://global-uploads.webflow.com/5dfd5aca7badfa129f80056c/5ed6d2e60331fd5be59cef4c_5ed5901b8c8b1f3f205e088e_63O1znGw_400x400.jpeg",
                 "Kochi",
                 "Explorer"),
             onTap: () => checkExperts(
                 context,
-                "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+                "https://global-uploads.webflow.com/5dfd5aca7badfa129f80056c/5ed6d2e60331fd5be59cef4c_5ed5901b8c8b1f3f205e088e_63O1znGw_400x400.jpeg",
                 "Name Singh Khan",
                 "2345674567",
                 "Explorer",
@@ -215,14 +217,12 @@ class PeopleScreen extends StatelessWidget {
                 "Kochi"),
           ),
           ExpertBlock(
-              "Anshuman Swain",
+              "Larry Page",
               "English, Hindi",
-              "https://images.shiksha.com/mediadata/images/articles/1583747992phpzaxKKK.jpeg",
+              "https://upload.wikimedia.org/wikipedia/commons/e/ec/Larry_Page_in_the_European_Parliament%2C_17.06.2009_%28cropped%29.jpg",
               "Kochi",
               "Explorer"),
         ],
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
       ),
     );
   }

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 class User {
@@ -16,16 +18,25 @@ class User {
 
   User(this.id, this.name, this.bio, this.number, this.age, this.location,
       this.type);
+
+  static User userFromJSONString(String jsonString) {
+    Map<String, dynamic> json = jsonDecode(jsonString);
+    return User(
+      json['id'],
+      json['name'],
+      json['bio'],
+      json['number'],
+      json['age'],
+      json['location'],
+      json['type'],
+    );
+  }
 }
 
 class UserProvider with ChangeNotifier {
   static User? user;
 
-  static Future<void> setUser(String uuid, String name, String location,
-      String age, String phoneNumber, String type) async {
-    user = User(uuid, name, "Crazy $type", phoneNumber, age, location, type);
+  static Future<void> setUser(User newUser) async {
+    user = newUser;
   }
-
-    // notifyListeners();
-  
 }
