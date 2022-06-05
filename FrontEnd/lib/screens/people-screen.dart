@@ -62,28 +62,6 @@ class PeopleScreen extends StatelessWidget {
                         )
                       ],
                     ),
-                    // Container(
-                    //   height: 100,
-                    //   width: 110,
-                    //   // color: Colors.accents,
-                    //   decoration: BoxDecoration(
-                    //       borderRadius: BorderRadius.circular(8),
-                    //       image: DecorationImage(
-                    //         image: NetworkImage(imgUrl),
-                    //         fit: BoxFit.fill,
-                    //       )),
-                    // ),
-                    // Text(
-                    //   "$name",
-                    //   style: TextStyle(fontSize: 20),
-                    // ),
-                    // SizedBox(
-                    //   height: 3,
-                    // ),
-                    // Text("Age: $age"),
-                    // SizedBox(
-                    //   height: 15,
-                    // ),
                     Container(
                         height: MediaQuery.of(context).size.height * 0.13,
                         margin:

@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
       title: 'Knocknock',
       theme: AppTheme(context),
 
-      //home: Dashboard(),
-      initialRoute: '/signin',
+      home: Dashboard(),
+      // initialRoute: '/signin',
       routes: routes,
     );
   }
